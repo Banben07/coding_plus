@@ -1,0 +1,30 @@
+module HEX_MODULE(input			    [2:0]		display_in,
+						input								ON,
+						output			 reg[6:0]		display_out);
+					  wire		[6:0]	 H0,H1,H2,H3,H4,H5,H6,H7,H8,H9,HZ;
+					  assign				 H0=7'b1000000;
+					  assign				 H1=7'b1111001;
+					  assign				 H2=7'b0100100;
+					  assign				 H3=7'b0110000;
+					  assign				 H4=7'b0011001;
+					  assign				 H5=7'b0010010;
+					  assign				 H6=7'b0000010;
+					  assign				 H7=7'b1111000;
+					  assign				 HZ=7'b1111111;
+				always@(display_in) begin
+				      if(ON==0) begin
+							             display_out=HZ;
+						end else
+						case(display_in)
+								3'd0:display_out=H0;
+								3'd1:display_out=H1;
+								3'd2:display_out=H2;
+								3'd3:display_out=H3;
+								3'd4:display_out=H4;
+								3'd5:display_out=H5;
+								3'd6:display_out=H6;
+								3'd7:display_out=H7;
+							default:display_out=HZ;
+						endcase
+				end
+endmodule

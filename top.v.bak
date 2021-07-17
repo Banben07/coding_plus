@@ -1,0 +1,4 @@
+module top(
+				input  [17:11]  SW,
+				input	 [8:1]	 SW);
+	

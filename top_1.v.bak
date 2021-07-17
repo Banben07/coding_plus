@@ -1,0 +1,7 @@
+module top_1(input   [8:0]   SW,
+				 output			  HEX0);
+wire      [2:0]		h;
+				 
+x83 x83_1(.r(SW),.h(h));
+HEX_MODULE dis_5(.display_in(h),.ON(SW[8]),.display_out(HEX0));
+endmodule
